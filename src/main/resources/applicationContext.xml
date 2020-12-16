@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!--    Spring框架 IOC 特性 控制反转-->
+    <!--    <bean id="zhao" class="com.abc.ssm.spring.Person">-->
+    <!--        &lt;!&ndash;属性注入&ndash;&gt;-->
+    <!--        <property name="pId" value="1001"/>-->
+    <!--        <property name="pName" value="ZHAO**"/>-->
+    <!--    <bean id="qian" class="com.abc.ssm.spring.Person">-->
+    <!--        &lt;!&ndash;构造注入&ndash;&gt;-->
+    <!--        <constructor-arg index="0" value="1002"/>-->
+    <!--        <constructor-arg index="1" value="QIAN**"/>-->
+    <!--    </bean>-->
+
+<!--    <bean id="huawei" class="com.abc.ssm.spring.Phone">-->
+<!--        <property name="brand" value="huawei"/>-->
+<!--        <property name="price" value="4999"/>-->
+<!--    </bean>-->
+
+<!--    <bean id="zhao" class="com.abc.ssm.spring.Person">-->
+<!--        &lt;!&ndash;属性注入&ndash;&gt;-->
+<!--        <property name="pId" value="1001"/>-->
+<!--        <property name="pName" value="ZHAO**"/>-->
+<!--        &lt;!&ndash;依赖注入&ndash;&gt;-->
+<!--        <property name="phone" ref="huawei"/>-->
+<!--    </bean>-->
+
+    <bean id="personDao" class="com.abc.ssm.spring.PersonDao"/>
+    <bean id="personService" class="com.abc.ssm.spring.PersonService">
+        <property name="persondao" ref="personDao"/>
+    </bean>
+
+</beans>

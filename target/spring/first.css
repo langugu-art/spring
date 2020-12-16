@@ -1,0 +1,15 @@
+table {
+  border-collapse: collapse;
+}
+td {
+  width: 120px;
+  height: 30px;
+  text-align: center;
+  border: solid 1px lightcyan;
+}
+td:hover {
+  box-shadow: 3px 3px 5px lightblue;
+}
+tr:nth-child(1) {
+  background-color: #ADD8E6;
+}
