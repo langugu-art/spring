@@ -4,6 +4,7 @@ import com.abc.controller.vo.DelVO;
 import com.abc.dao.entity.Emp;
 import com.abc.dao.idao.IEmpDao;
 import com.abc.dao.util.DBUtil;
+import org.springframework.stereotype.Repository;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -11,6 +12,7 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
+@Repository("empDao")
 public class EmpDaoImpl implements IEmpDao {
 
     @Override

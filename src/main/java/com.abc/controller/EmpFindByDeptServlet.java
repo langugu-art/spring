@@ -2,8 +2,8 @@ package com.abc.controller;
 
 import com.abc.common.Comm;
 import com.abc.common.Res;
+import com.abc.common.SpringIOC;
 import com.abc.dao.entity.Emp;
-import com.abc.service.factory.ServiceFactory;
 import com.abc.service.iservice.IEmpService;
 import com.alibaba.fastjson.JSON;
 
@@ -22,7 +22,7 @@ public class EmpFindByDeptServlet extends HttpServlet {
     //			            type:"post",
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         int deptno = Integer.parseInt(request.getParameter("deptno"));
-        IEmpService empService = (IEmpService) ServiceFactory.getInstance(Comm.EMP);
+        IEmpService empService = (IEmpService) SpringIOC.getSpringIOC().getBean("empService");
         Res<List<Emp>> result=empService.findByDept(deptno);
         PrintWriter out = response.getWriter();
         out.println(JSON.toJSONString(result));

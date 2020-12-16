@@ -1,8 +1,8 @@
 package com.abc.controller;
 
 import com.abc.common.Comm;
+import com.abc.common.SpringIOC;
 import com.abc.dao.entity.Emp;
-import com.abc.service.factory.ServiceFactory;
 import com.abc.service.iservice.IEmpService;
 
 import javax.servlet.ServletException;
@@ -20,7 +20,7 @@ public class EmpDeleteServlet extends HttpServlet {
         //用int的包装类Integer的parseInt()方法，将empno转换为整形
         int empno=Integer.parseInt(request.getParameter("empno"));
         //用getInstance来获取EMP对象
-        IEmpService empService= (IEmpService) ServiceFactory.getInstance(Comm.EMP);
+        IEmpService empService= (IEmpService) SpringIOC.getSpringIOC().getBean("empService");
         Emp emp=new Emp();
         emp.setEmpno(empno);
         //***

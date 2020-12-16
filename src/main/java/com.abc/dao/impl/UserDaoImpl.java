@@ -3,12 +3,14 @@ package com.abc.dao.impl;
 import com.abc.dao.entity.User;
 import com.abc.dao.idao.IUserDao;
 import com.abc.dao.util.DBUtil;
+import org.springframework.stereotype.Repository;
 
+import javax.annotation.Resource;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
-
+@Repository("userDao")
 public class UserDaoImpl implements IUserDao {
     @Override
     public int exist(String username) throws Exception {
